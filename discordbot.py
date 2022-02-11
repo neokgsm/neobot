@@ -84,7 +84,7 @@ async def _8ball(ctx):
            "My sources say no.",
            "Outlook not so good.",
            "Very doubtful."]
-    await ctx.send(f'@{ctx.authour.mention}, {ans[random.randrange(len(ans))]})
+    await ctx.send(f'{ctx.authour.mention}, {ans[random.randrange(len(ans))]}')
 
 @bot.command()
 async def test(ctx):
