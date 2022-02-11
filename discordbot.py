@@ -67,7 +67,7 @@ async def _bot(ctx):
 
 @commands.command(name="8ball")
 async def _8ball(ctx):
-    ans = ["It is certain.", 
+    ans = ["It is certain.",
            "It is decidedly so.",
            "Without a doubt.",
            "Yes definitely.",
