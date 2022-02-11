@@ -112,7 +112,10 @@ async def ban(ctx, user="", reason=""):
         await ctx.send('Missing reason argument. Usage: $ban <user> <reason>')
     else:
         the_user = bot.get_user(int(user[3:-1]))
-        await ctx.send(f'{ctx.author.mention} ({ctx.author} - {ctx.author.id}) banned {the_user.mention} ({str(the_user)} - {user[3:-1]}) for reason: {reason}')
+        ban_txt = f'{ctx.author.mention} ({ctx.author} - {ctx.author.id}) banned {the_user.mention} ({str(the_user)} - {user[3:-1]} ) for reason: {reason}'
+        await ctx.send(ban_txt)
+        mod_act = bot.get_channel(938112717892501545)
+        await mod_act.send(ban_txt)
 
 # test
 @bot.command()
