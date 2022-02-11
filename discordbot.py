@@ -65,6 +65,6 @@ async def _bot(ctx):
 
 @bot.command()
 async def test(ctx):
-    await ctx.send(ctx.author.mention)
+    await ctx.send(f'{ctx.author.mention}, hi.')
 
 bot.run(os.environ['DISCORD_BOT_TOKEN'])
