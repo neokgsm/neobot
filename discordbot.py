@@ -1,4 +1,4 @@
-import discord
+rimport discord
 from discord.ext import commands
 import os
 import random
@@ -63,7 +63,7 @@ async def _bot(ctx):
     """Is the bot cool?"""
     await ctx.send('Yes, the bot is cool.')
 
-@commands.command(name="8ball")
+@bot.command(name="8ball")
 async def _8ball(ctx):
     ans = ["It is certain.",
            "It is decidedly so.",
