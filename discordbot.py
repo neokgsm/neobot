@@ -63,7 +63,7 @@ async def _bot(ctx):
     """Is the bot cool?"""
     await ctx.send('Yes, the bot is cool.')
 
-@test.command()
+@bot.command()
 async def test(ctx):
     await ctx.send(ctx.subcommand_passed)
     
