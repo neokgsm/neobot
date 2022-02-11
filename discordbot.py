@@ -101,7 +101,7 @@ async def on_message(message):
     if any(word in message.content for word in illegal_words):
         await message.delete()
     else:
-        await client.process_commands(message)
+        await bot.process_commands(message)
 
 # test
 @bot.command()
