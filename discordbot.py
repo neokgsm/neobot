@@ -84,6 +84,6 @@ async def _8ball(ctx):
            "My sources say no.",
            "Outlook not so good.",
            "Very doubtful."]
-    await ctx.send(ans[random.randrange(len(ans))])
+    await ctx.send(f'@{ctx.subcommand_passed}, {ans[random.randrange(len(ans))]})
 
 bot.run(os.environ['DISCORD_BOT_TOKEN'])
