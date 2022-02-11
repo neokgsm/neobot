@@ -127,6 +127,16 @@ async def sub(ctx):
     else:
         await ctx.author.add_roles(role)
 
+# Nitro Boost
+@bot.command()
+async def boost(ctx):
+    server = ctx.author.guild
+    role = discord.utils.get(server.roles, name='Nitro Booster')
+    if role in ctx.author.roles:
+        await ctx.author.remove_roles(role)
+    else:
+        await ctx.author.add_roles(role)
+
 # test
 @bot.command()
 async def test(ctx):
