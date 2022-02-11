@@ -63,7 +63,7 @@ async def _bot(ctx):
     """Is the bot cool?"""
     await ctx.send('Yes, the bot is cool.')
 
-### 8ball ###
+# 8ball
 @bot.command(name="8ball")
 async def _8ball(ctx):
     ans = ["It is certain.",
@@ -88,13 +88,13 @@ async def _8ball(ctx):
            "Very doubtful."]
     await ctx.send(f'{ctx.author.mention}, {ans[random.randrange(len(ans))]}')
 
-### ping ###
+# ping
 @bot.command()
 async def ping(ctx):
     ans = ["pang", "ping", "pung", "peng", "pong"]
     await ctx.send(f'{ctx.author.mention}, {ans[random.randrange(len(ans))]}.')
 
-### 1984 ###
+# 1984
 illegal_words = ["nigger"]
 @bot.event
 async def on_message(message):
@@ -103,7 +103,7 @@ async def on_message(message):
     else:
         await client.process_commands(message)
 
-### test ###
+# test
 @bot.command()
 async def test(ctx):
     await ctx.send(f'{ctx.author.mention}, hi.')
