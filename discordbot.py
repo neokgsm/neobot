@@ -103,6 +103,17 @@ async def on_message(message):
     else:
         await bot.process_commands(message)
 
+# ban
+@bot.command(name="ban")
+async def ban(ctx, user="", reason=""):
+    if user=='':
+        await ctx.send('Missing user argument. Usage: $ban <user> <reason>')
+    if reason=='':
+        await ctx.send('Missing reason argument. Usage: $ban <user> <reason>')
+    else:
+        the_user = bot.get_user(int(user[3:-1]))
+        await ctx.send(f'{ctx.author.mention} ({ctx.author} - {ctx.author.id}) banned {the_user.mention} ({str(the_user)} - {user[3:-1]}) for reason: {reason}')
+
 # test
 @bot.command()
 async def test(ctx):
