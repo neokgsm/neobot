@@ -117,6 +117,16 @@ async def ban(ctx, user="", reason=""):
         mod_act = bot.get_channel(938112717892501545)
         await mod_act.send(ban_txt)
 
+# sub
+@bot.command()
+async def sub(ctx):
+    server = ctx.author.guild
+    role = discord.utils.get(server.roles, name='Bajs')
+    if role in ctx.author.roles:
+        await ctx.author.remove_roles(role)
+    else:
+        await ctx.author.add_roles(role)
+
 # test
 @bot.command()
 async def test(ctx):
