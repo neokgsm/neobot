@@ -88,6 +88,11 @@ async def _8ball(ctx):
     await ctx.send(f'{ctx.author.mention}, {ans[random.randrange(len(ans))]}')
 
 @bot.command()
+async def ping(ctx):
+    ans = ["pang", "ping", "pung", "peng", "pong"]
+    await ctx.send(f'{ctx.author.mention}, {ans[random.randrange(len(ans))]}.')
+
+@bot.command()
 async def test(ctx):
     await ctx.send(f'{ctx.author.mention}, hi.')
 
