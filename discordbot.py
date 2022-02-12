@@ -162,7 +162,7 @@ async def color(ctx, nitro_color=""):
 
 # colors
 @bot.command()
-async def color(ctx):
+async def colors(ctx):
     color_names = [nc.name for nc in server.roles if 'nitro' in nc.name]
     txt = str(color_names).replace("'", "").replace(",", "")
     await ctx.send(f'These are the available colors: {txt}')
