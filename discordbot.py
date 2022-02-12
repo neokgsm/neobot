@@ -139,21 +139,26 @@ async def boost(ctx):
 
 # nitro color
 @bot.command()
-async def color(ctx, nitro_color):
+async def color(ctx, nitro_color=""):
     server = ctx.author.guild
     the_role = discord.utils.get(server.roles, name=nitro_color)
     booster = discord.utils.get(server.roles, name='Nitro Booster')
     nitro_colors = [nc for nc in server.roles if 'nitro:' in nc.name]
-    nitro_colors = [nc for nc in nitro_colors if nc != the_role]
-    if the_role in ctx.author.roles:
-        await ctx.author.remove_roles(the_role)
+    color_names = [nc.name for nc in server.roles if 'nitro' in nc.name]
+    if nitro_color == "":
+        await ctx.send("You need to provide a color. Usage: $color <colorname>")
+    elif nitro_color not in color_names:
+        await ctx.send("The specified color doesn't exist. Use $colors to see what colors are available")
     else:
-        for role in nitro_colors:
-            if role in ctx.author.roles:
-                await ctx.author.remove_roles(role)
-        await ctx.author.add_roles(the_role)
-        await ctx.author.add_roles(booster)
-        await ctx.send(f'Color {nitro_color} assigned correctly.')
+        nitro_colors = [nc for nc in nitro_colors if nc != the_role]
+        if the_role in ctx.author.roles:
+            await ctx.author.remove_roles(the_role)
+        else:
+            for role in nitro_colors:
+                if role in ctx.author.roles:
+                    await ctx.author.remove_roles(role)
+            await ctx.author.add_roles(the_role)
+            await ctx.author.add_roles(booster)
 
 # test
 @bot.command()
