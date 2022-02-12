@@ -69,6 +69,8 @@ async def on_member_join(member):
     server = member.guild
     role = discord.utils.get(server.roles, name='Member')
     await member.add_roles(role)
+    new_members = bot.get_channel(941963844807446529)
+    await new_members.send(f'{member} joined'.)
 
 # 8ball
 @bot.command(name="8ball")
