@@ -63,6 +63,13 @@ async def _bot(ctx):
     """Is the bot cool?"""
     await ctx.send('Yes, the bot is cool.')
 
+# autorole
+@bot.event
+async def on_member_join(member):
+    server = member.guild
+    role = discord.utils.get(server.roles, name='Member')
+    await member.add_roles(role)
+
 # 8ball
 @bot.command(name="8ball")
 async def _8ball(ctx):
