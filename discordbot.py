@@ -182,6 +182,12 @@ async def colors(ctx):
     txt = str(color_names).replace("'", "").replace(",", "")
     await ctx.send(f'These are the available colors: {txt}')
 
+# accountage
+@bot.command()
+async def accountage(ctx):
+    date = str(ctx.author.created_at)
+    await ctx.send(f'{ctx.author.mention}, your account was created at {date[0:-7]} UTC')
+
 # test
 @bot.command()
 async def test(ctx):
