@@ -109,7 +109,7 @@ async def ping(ctx):
     await ctx.send(f'{ctx.author.mention}, {ans[random.randrange(len(ans))]}.')
 
 # 1984
-illegal_words = ["nigger"]
+illegal_words = ["nigger", "ñigger", "ńigger"]
 @bot.event
 async def on_message(message):
     if any(word in message.content for word in illegal_words):
