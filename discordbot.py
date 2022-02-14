@@ -108,8 +108,19 @@ async def ping(ctx):
     ans = ["pang", "ping", "pung", "peng", "pong"]
     await ctx.send(f'{ctx.author.mention}, {ans[random.randrange(len(ans))]}.')
 
+# illegal word generator
+n_list = ["n", "ń", "ñ"]
+i_list = ["i", "ì", "į", "ī", "í", "ï", "î"]
+e_list = ["e", "è", "é", "ê", "ë", "ē", "ė", "ę"]
+s_list = ["", "s", "ś", "ś"]
+illegal_words = []
+for n in n_list:
+  for i in i_list:
+    for e in e_list:
+      for s in s_list:
+        illegal_words.append(f'{n}{i}gg{e}r{s}')
+
 # 1984
-illegal_words = ["nigger", "ñigger", "ńigger"]
 @bot.event
 async def on_message(message):
     if any(word in message.content for word in illegal_words):
