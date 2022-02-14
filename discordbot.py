@@ -115,10 +115,10 @@ e_list = ["e", "è", "é", "ê", "ë", "ē", "ė", "ę"]
 s_list = ["", "s", "ś", "ś"]
 illegal_words = []
 for n in n_list:
-  for i in i_list:
-    for e in e_list:
-      for s in s_list:
-        illegal_words.append(f'{n}{i}gg{e}r{s}')
+    for i in i_list:
+        for e in e_list:
+            for s in s_list:
+                illegal_words.append(f'{n}{i}gg{e}r{s}')
 
 # 1984
 @bot.event
