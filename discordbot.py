@@ -112,18 +112,17 @@ async def ping(ctx):
 n_list = ["n", "ń", "ñ"]
 i_list = ["i", "ì", "į", "ī", "í", "ï", "î"]
 e_list = ["e", "è", "é", "ê", "ë", "ē", "ė", "ę"]
-s_list = ["", "s", "ś", "ś"]
+#s_list = ["", "s", "ś", "ś"]
 illegal_words = []
 for n in n_list:
     for i in i_list:
         for e in e_list:
-            for s in s_list:
-                illegal_words.append(f'{n}{i}gg{e}r{s}')
+            illegal_words.append(f'{n}{i}gg{e}r')
 
 # 1984
 @bot.event
 async def on_message(message):
-    if any(word in message.content for word in illegal_words):
+    if any(word in message.content.lower() for word in illegal_words):
         await message.delete()
     else:
         await bot.process_commands(message)
