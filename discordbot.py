@@ -112,7 +112,7 @@ async def ping(ctx):
 n_list = ["n", "ń", "ñ"]
 i_list = ["i", "ì", "į", "ī", "í", "ï", "î"]
 e_list = ["e", "è", "é", "ê", "ë", "ē", "ė", "ę"]
-#s_list = ["", "s", "ś", "ś"]
+# s_list = ["", "s", "ś", "ś"]
 illegal_words = []
 for n in n_list:
     for i in i_list:
