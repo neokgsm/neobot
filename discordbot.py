@@ -198,6 +198,13 @@ async def accountage(ctx):
     date = str(ctx.author.created_at)
     await ctx.send(f'{ctx.author.mention}, your account was created at {date[0:-7]} UTC')
 
+# pfp
+@bot.command()
+async def pfp(ctx, id: int):
+    user = await bot.fetch_user(id)
+    url = user.avatar_url
+    await ctx.send(url)
+
 # test
 @bot.command()
 async def test(ctx):
