@@ -183,6 +183,7 @@ async def color(ctx, nitro_color=""):
                     await ctx.author.remove_roles(role)
             await ctx.author.add_roles(the_role)
             await ctx.author.add_roles(booster)
+            await ctx.send(f"Color {nitro_color} assigned correctly.")
 
 # colors
 @bot.command()
