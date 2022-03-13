@@ -110,8 +110,8 @@ async def ping(ctx):
 
 # illegal word generator
 n_list = ["n", "ń", "ñ"]
-i_list = ["i", "ì", "į", "ī", "í", "ï", "î"]
-e_list = ["e", "è", "é", "ê", "ë", "ē", "ė", "ę"]
+i_list = ["i", "ì", "į", "ī", "í", "ï", "î", "l", "1"]
+e_list = ["e", "è", "é", "ê", "ë", "ē", "ė", "ę", "3"]
 # s_list = ["", "s", "ś", "ś"]
 illegal_words = []
 for n in n_list:
@@ -136,6 +136,7 @@ async def ban(ctx, user="", reason=""):
         await ctx.send('Missing reason argument. Usage: $ban <user> <reason>')
     else:
         the_user = bot.get_user(int(user[3:-1]))
+        reason = discord.utils.escape_mentions(reason)
         ban_txt = f'{ctx.author.mention} ({ctx.author} - {ctx.author.id}) banned {the_user.mention} ({str(the_user)} - {user[3:-1]}) for reason: {reason}'
         await ctx.send(ban_txt)
         mod_act = bot.get_channel(938112717892501545)
