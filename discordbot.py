@@ -127,7 +127,7 @@ async def on_message(message):
     else:
         await bot.process_commands(message)
 
-# ban
+# ban cmd
 @bot.command(name="ban")
 async def ban(ctx, user="", reason=""):
     if user == '':
